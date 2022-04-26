@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html lang="ru" xmlns:th="http://thymeleaf.org">
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>All notes</title>
+</head>
+<body>
+<h1>NOTES</h1>
+
+
+<div th:each="note : ${notes}">
+
+
+
+    <a th:href="@{/notes/{id}(id=${note.getId()})}" th:text="${note.getNote()}">note</a>
+
+
+</div>
+<br/>
+
+<form action="/notes/new" target="_blank">
+    <button>Add new note</button>
+</form>
+
+<br/>
+
+<form action="/notes/saveToFile" target="_blank">
+    <button>Save to file</button>
+</form>
+
+</body>
+</html>

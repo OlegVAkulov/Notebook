@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Save to file</title>
+</head>
+<body>
+<p>NOTES</p>
+
+<div th:each="note : ${notes}">
+
+
+
+    <a th:text="${note.getNote()}">note</a>
+
+
+</div>
+<br/>
+<a>Save to file D:/notes.txt</a>
+<br/>
+<br/>
+<form action="/notes" target="_blank">
+    <button>Back to notes</button>
+</form>
+
+</body>
+</html>
